@@ -87,6 +87,19 @@ hr {
  background-color: #F7F7F7;
 }
 
+@media only screen and (max-width: 900px) {
+.text{
+ width: 100%;
+ font-size: 15px;
+ font-weight: 500;
+ text-align: justify;
+ border: none;
+ padding: 30px;
+ background-clip: padding-box;
+ background-color: #F7F7F7;
+}
+}
+
 .logo{
   width:100%;
 }
