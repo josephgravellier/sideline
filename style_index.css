@@ -5,7 +5,9 @@
 
 .col-none { width: 25%; }
 .col-menu { width: 100%; }
-.col-logo-text { width: 30%; }
+.col-text { width: 30%; }
+.col-video { width: 50%; }
+.col-main-logo { width: 25%; }
 
 ul { display: table; width: 100%;}
 ul li a { padding: 5px 10px;}
@@ -13,12 +15,14 @@ ul li a { padding: 5px 10px;}
 @media only screen and (max-width: 900px) {
   .col-none { display: none; }
   .col-menu { width: 100%; }
-  .col-logo-text { width: 90%; }
+  .col-text { width: 90%; }
+  .col-video { width: 90%; }
+  .col-main-logo { width: 80%; }
   
-	ul li { 
-	display:block;
-	float:none;
-	}
+  ul li { 
+  display:block;
+  float:none;
+  }
 }
 
 hr {
@@ -57,7 +61,7 @@ hr {
   transform: scale(1.2);
 }
 
-.logo_and_text{
+.text-block{
  display: inline-block;
  text-align: center;
  margin-top: 3%;
@@ -67,13 +71,13 @@ hr {
 }
 
 @media only screen and (max-width: 900px) {
-  .logo_and_text{
- display: inline-block;
- text-align: center;
- margin-top: 3%;
- margin-right: 5%;
- margin-left: 5%;
-}
+    .text-block{
+   display: inline-block;
+   text-align: center;
+   margin-top: 3%;
+   margin-right: 5%;
+   margin-left: 5%;
+  }
 }
 
 .text{
@@ -99,6 +103,85 @@ hr {
  background-color: #F7F7F7;
 }
 }
+
+.col-block{
+ display: inline-block;
+ text-align: left;
+ margin-top: 3%;
+ margin-left: 25%;
+ margin-right: 25%;
+ font-size: 20px;
+}
+
+@media only screen and (max-width: 900px) {
+    .col-block{
+   display: inline-block;
+   text-align: center;
+   margin-top: 3%;
+   margin-right: 5%;
+   margin-left: 5%;
+  }
+}
+
+.yt {
+  position: relative;
+  display: block;
+  width: 100%; /* width of iframe wrapper */
+  height: 0;
+  margin: auto;
+  padding: 0% 0% 56.25%; /* 16:9 ratio */
+  overflow: hidden;
+}
+.yt iframe {
+  position: absolute;
+  top: 0; bottom: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.main-logo-block{
+ display: inline-block;
+ text-align: center;
+ margin-top: 3%;
+ margin-left: 38%;
+ margin-right: 38%;
+ font-size: 20px;
+}
+
+@media only screen and (max-width: 900px) {
+  .main-logo-block{
+ display: inline-block;
+ text-align: center;
+ margin-top: 3%;
+ margin-right: 10%;
+ margin-left: 10%;
+}
+
+}
+
+
+.main-logo{
+ width: 100%;
+ font-size: 20px;
+ font-weight: 500;
+ text-align: justify;
+ border: none;
+ padding: 30px;
+
+}
+
+@media only screen and (max-width: 900px) {
+.main-logo{
+ width: 100%;
+ font-size: 15px;
+ font-weight: 500;
+ text-align: justify;
+ border: none;
+ padding: 30px;
+}
+}
+
 
 .logo{
   width:100%;
