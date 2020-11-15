@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body>
+<body style="background-color:black">
 
 <ul class="menu">
 	<li style="display: inline-block;"><a href="https://josephgravellier.github.io/sideline/" class="links_menu col-menu" width=10%><b>SideLine</b></a></li>	&nbsp;	&nbsp;	&nbsp;	&nbsp;
@@ -19,15 +19,15 @@
 <hr/>
 
 <div class = "main-logo-block col-main-logo">
-	  <img src="https://josephgravellier.github.io/sideline/media/sideline_logo.PNG" class="main-logo"> <br/>
+	  <img src="https://josephgravellier.github.io/sideline/media/sideline_logo_tr.png" class="main-logo"> <br/>
 </div>
 
 <div class = "text-block col-text">
 
 	<div class="text">
-		SideLine is a power side-channel attack vector based on delay-line components widely implemented in modern CPUs. <br/><br/>
+		SideLine is a <b>software-based</b> power side-channel analysis vector. It uses <b>delay-lines</b> (located in SoC memory controllers) as power meters. <br/><br/>
     
-   There is a strong and reliable relationship between the delay-line state and your CPU activity.  <br/><br/>
+   There is a strong and reliable relationship between the <b>delay-line state</b> and your <b>CPU activity</b>.  <br/><br/>
    
    
     SideLine can be maliciously used to monitor your CPU power activity without your consent. Secured enclosures, access or tamper resistance do not mitigate Sideline. It can be launched remotely even it is a hardware attack<br/> <br/> 
@@ -35,27 +35,31 @@
     A CPU infected by a SideLine-based malware is suceptible to the theft of personal and private data such as cryptographic secrets.<br/> <br/> 
          
 </div>
+</div>
 
-  	<div class="links_out">
+
+
+<div class = "links-block col-links">
   <a href="mailto:joseph.gravellier@emse.fr">
     <img src="https://josephgravellier.github.io/sideline/media/email_logo.png" class="links" ></a>
   <a href="https://arxiv.org/abs/2009.07773" target="_blank">
     <img src="https://josephgravellier.github.io/sideline/media/cite_logo.png" class="links" ></a>
   <a href="https://github.com/josephgravellier" target="_blank">
     <img src="https://josephgravellier.github.io/sideline/media/github_logo.png" class="links" ></a>
-    </div>
-    
-  <br/><br/><br/>
-    
 </div>
 
+
+<br/>
 <div class = "col-block col-video">
-  <b>Reproduce SideLine</b><br>
-  
-  <b>Demo Video</b>
+  <div class = "text">
+  <b>Demo Video:</b><br><br>
   <div class = "yt">
-  <iframe width="420" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe> 
+  <iframe width="420" height="315" src="https://www.youtube.com/embed/7gVvwF-SGNY"></iframe>
   </div>
+   <br><br>
+    <b>Reproduce SideLine:</b><br><br>
+  <img src="https://josephgravellier.github.io/sideline/media/CPA.png" class="png_image" ><br><br>
+    </div>
 </div>
 
 

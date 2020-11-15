@@ -1,13 +1,15 @@
 * {
   box-sizing: border-box;
-  font-family: Helvetica;
+  font-family: Consolas;
+  color: white;
 }
 
 .col-none { width: 25%; }
 .col-menu { width: 100%; }
-.col-text { width: 30%; }
+.col-links { width: 30%; }
+.col-text { width: 50%; }
 .col-video { width: 50%; }
-.col-main-logo { width: 25%; }
+.col-main-logo { width: 100%; }
 
 ul { display: table; width: 100%;}
 ul li a { padding: 5px 10px;}
@@ -16,8 +18,9 @@ ul li a { padding: 5px 10px;}
   .col-none { display: none; }
   .col-menu { width: 100%; }
   .col-text { width: 90%; }
+  .col-links { width: 30%; }
   .col-video { width: 90%; }
-  .col-main-logo { width: 80%; }
+  .col-main-logo { width: 100%; }
   
   ul li { 
   display:block;
@@ -61,19 +64,40 @@ hr {
   transform: scale(1.2);
 }
 
-.text-block{
+.main-logo-block{
+ background: linear-gradient(90deg, rgba(65,255,74,1) 0%, rgba(139,129,203,1) 100%);
  display: inline-block;
- text-align: center;
- margin-top: 3%;
+}
+
+.main-logo{
+ margin-top: 1%;
+ margin-bottom: -3%;
  margin-left: 35%;
  margin-right: 35%;
+ width: 30%;
+}
+
+@media only screen and (max-width: 900px) {
+.main-logo{
+ margin-top: 1%;
+ margin-bottom: -3%;
+ margin-left: 15%;
+ margin-right: 15%;
+ width: 70%;
+}
+}
+
+.text-block{
+ display: inline-block;
+ margin-top: 3%;
+ margin-left: 25%;
+ margin-right: 25%;
  font-size: 20px;
 }
 
 @media only screen and (max-width: 900px) {
     .text-block{
    display: inline-block;
-   text-align: center;
    margin-top: 3%;
    margin-right: 5%;
    margin-left: 5%;
@@ -84,25 +108,36 @@ hr {
  width: 100%;
  font-size: 20px;
  font-weight: 500;
- text-align: justify;
+ text-align: left;
  border: none;
  padding: 30px;
  background-clip: padding-box;
- background-color: #F7F7F7;
+ background-color: #000000;
 }
 
-@media only screen and (max-width: 900px) {
-.text{
- width: 100%;
- font-size: 15px;
- font-weight: 500;
- text-align: justify;
- border: none;
- padding: 30px;
- background-clip: padding-box;
- background-color: #F7F7F7;
+.links-block{
+ margin-top: 0%;
+ margin-bottom: 0%;
+ margin-left: 35%;
+ margin-right: 35%;
+ text-align: center;
+ border-radius: 10px;
+ border: 5px none red;
+ background: white;
 }
+
+.links{
+  transition: transform 0.1s;
+  width: 4em;
+  margin-top: 15px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
+
+.links:hover{
+  transform: scale(1.2);
+}
+
 
 .col-block{
  display: inline-block;
@@ -140,90 +175,11 @@ hr {
   border: 0;
 }
 
-.main-logo-block{
- display: inline-block;
- text-align: center;
- margin-top: 3%;
- margin-left: 38%;
- margin-right: 38%;
- font-size: 20px;
-}
-
-@media only screen and (max-width: 900px) {
-  .main-logo-block{
- display: inline-block;
- text-align: center;
- margin-top: 3%;
- margin-right: 10%;
- margin-left: 10%;
-}
-
-}
-
-
-.main-logo{
- width: 100%;
- font-size: 20px;
- font-weight: 500;
- text-align: justify;
- border: none;
- padding: 30px;
-
-}
-
-@media only screen and (max-width: 900px) {
-.main-logo{
- width: 100%;
- font-size: 15px;
- font-weight: 500;
- text-align: justify;
- border: none;
- padding: 30px;
-}
-}
-
-
-.logo{
-  width:100%;
-}
-
-.links_out{
-   width: 100%;
- font-size: 20px;
- font-weight: 500;
- text-align: center;
- border: none;
- padding: 30px;
- background-clip: padding-box;
- background-color: #F7F7F7;
-}
-
-
-@media only screen and (max-width: 1100px) {
-.news{
- display: inline-block;
- text-align: center;
- margin-top: 6%;
- margin-left: 5%;
- margin-right: 5%;
-}
-}
-
-.title_news{
- width: 100%;
- font-size: 20px;
- font-family: helvetica;
- font-weight: 500;
- text-align: left;
- background-color: #D1D1D1;
-}
-.text_news{
- width: 100%;
- font-size: 17px;
- font-weight: 500;
- text-align: justify;
- background-color: none;
- margin-left: 0%;
+.png_image{
+  transition: transform 0.1s;
+  width: 90%;
+  margin-right: 5%;
+  margin-left: 5%;
 }
 
 .text_bottom{
@@ -233,20 +189,4 @@ hr {
  text-align: center;
  background-color: none;
  margin-left: 0%;
-}
-
-.links_presentation{
- text-align: center;
- }
-
-.links{
-  transition: transform 0.1s;
-  width: 3em;
-  margin-top: 15px;
-  margin-left: 5px;
-  margin-right: 5px;
-}
-
-.link:hover{
-  transform: scale(1.1);
 }
