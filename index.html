@@ -23,7 +23,7 @@
 
 </div>
 
- <div class = "main-logo-block">
+ <div class = "main-logo-block col-main-logo">
 <img src="https://josephgravellier.github.io/sideline/media/sideline_logo_tr.png" class="main-logo"> 
 </div>
 
@@ -44,9 +44,9 @@
     
    There is a strong and reliable relationship between the <b>delay-line state</b> and your <b>CPU activity</b>.  <br/><br/>
    
-    SideLine can be maliciously used to monitor your CPU power activity without your consent. Logical isolation, restricted access or tamper resistance do not mitigate Sideline. It can be launched remotely even it is a hardware attack<br/> <br/> 
+    A SideLine-based malware may <b>monitor your power activity without your consent</b> and steal your personal data. Logical isolation, restricted access or tamper resistance do not mitigate Sideline.<br/> <br/> 
     
-    A CPU infected by a SideLine-based malware is suceptible to the theft of personal and private data such as cryptographic secrets.
+   <!-- A CPU infected by a SideLine-based malware is suceptible to the theft of personal and private data such as cryptographic secrets.-->
 
 </div>
 <br/><br/>
@@ -61,24 +61,56 @@
     <a href="https://github.com/josephgravellier" target="_blank">
       <img src="https://josephgravellier.github.io/sideline/media/github_logo.png" class="links" ></a>
   </div><br><br>
+        <div class = "title-text">
+     SideLine Attacks
+     </div>
 <hr>
 
 <div class = "text-block col-text">
 <br/><br/>
+
+  <div class = "larger-text">
+  <b>On Cortex-A and Cortex-M ARM processors</b><br><br>
+  </div>
+  
+	<div class="text">
+  
+Using SideLine we perform several core-vs-core Correlation Power Analysis attacks. For each scenario, one core (the victim) runs Openssl AES encryptions. The other core (attacker) uses SideLine to eavesdrop the victim's core activity.<br><br>
+<img src="https://josephgravellier.github.io/sideline/media/attack_scenarios.PNG" class="png_image" >
+The first target considered in this work comes with a dual-core <b>Cortex-A9</b> processor. (scenario 1)<br><br>
+
+The second target embeds a dual-core <b>Cortex-A7</b> processor associated with a <b>Cortex-M4</b> processor. (scenario 2-3)<br>
+
+</div>
+
+<br><br>
+
   <div class = "larger-text">
   <b>SideLine Demonstration:</b><br><br>
+  </div>
+  	<div class="text">
+    SideLine-based core-vs-core power SCA live
+
   <div class = "yt">
   <iframe width="420" height="315" src="https://www.youtube.com/embed/7gVvwF-SGNY"></iframe>
   </div>
   </div> <br><br>
   </div> 
- 
+  
+  
+<hr>
+<div class = "links-block col-links">
+  <div class = "title-text">
+    Reproduce SideLine
+  </div>
+</div><br>
+<hr>
+
   <div class = "text-block col-text">
-    <div class = "larger-text">
-    <b>Reproduce SideLine:</b><br><br>
+    <div class = "text">
+    <br>
     <img src="https://josephgravellier.github.io/sideline/media/CPA.png" class="png_image" >
     <br><br>
-    </div>
   </div>
 <hr>
 
