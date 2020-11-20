@@ -15,8 +15,8 @@
 <ul class="menu">
 
 	<li style="display: inline-block;"><a href="https://josephgravellier.github.io/sideline/" class="links_menu col-menu"> <b>SIDELINE</b></a></li>	&nbsp; &nbsp; &nbsp; &nbsp;
-	<li style="display: inline-block;"><a href="qa.html" class="links_menu col-menu">Q &amp; A</a></li>	&nbsp; &nbsp; &nbsp; &nbsp;
-	<li style="display: inline-block;"><a href="reproduce.html" class="links_menu col-menu">Reproduce</a></li>
+	<li style="display: inline-block;"><a href="#link-qa" class="links_menu col-menu">Q &amp; A</a></li>	&nbsp; &nbsp; &nbsp; &nbsp;
+	<li style="display: inline-block;"><a href="#link-reproduce" class="links_menu col-menu">Reproduce</a></li>
 </ul>
     
 <hr>
@@ -62,7 +62,7 @@
       <img src="https://josephgravellier.github.io/sideline/media/github_logo.png" class="links" ></a>
   </div><br><br>
         <div class = "title-text">
-     SideLine Attacks
+     SideLine Demos
      </div>
 <hr>
 
@@ -70,7 +70,7 @@
 <br/><br/>
 
   <div class = "larger-text">
-  <b>On Cortex-A and Cortex-M ARM processors</b><br><br>
+  <b><i>On Cortex-A and Cortex-M based SoC</i></b><br><br>
   </div>
   
 	<div class="text">
@@ -87,41 +87,145 @@ We target high-end SoCs designed for IoT, automotive or mobile solutions which c
   <b>Demonstration:</b><br><br>
   </div>
   	<div class="text">
-    SideLine-based core-vs-core power SCA live
+    <!--<i>SideLine-based core-vs-core power SCA live</i>-->
 
   <div class = "yt">
   <iframe width="420" height="315" src="https://www.youtube.com/embed/7gVvwF-SGNY"></iframe>
   </div>
   </div> <br><br>
   </div> 
-  
-  
+  <h1 id="link-reproduce"></h1>
+  <hr>
+  <div class = "links-block col-links">
+    
+    <div class = "title-text">
+    Reproduce SideLine
+    </div>
+  </div>
+  <hr>
+
+  <div class = "text-block col-text">
+    <div class = "text">
+      <br><br>
+      Responsible Disclosure ongoing...
+      <br><br><br>
+      <!--<img src="https://josephgravellier.github.io/sideline/media/CPA.png" class="png_image" >
+      <br><br>-->
+    </div>
+    </div>
+    
+ <h1 id="link-qa"></h1>
 <hr>
 <div class = "links-block col-links">
+
   <div class = "title-text">
-    Reproduce SideLine
+  Q &amp; A
   </div>
 </div><br>
 <hr>
 
-  <div class = "text-block col-text">
-    <div class = "text">
-    <br>
-    Responsible Disclosure ongoing...
+<div class = "text-block col-text">
+
+  <div class="text">
+ 
     <br><br>
-    <img src="https://josephgravellier.github.io/sideline/media/CPA.png" class="png_image" >
-    <br><br>
+    
+    <div class="subtitle-white">
+      <b>About SideLine Impact</b><br><br>
+    </div>
+     <div class="subtitle-grey">
+     <b>SideLine is unprecedented</b></div> 
+     This is the first time that intra power side-channel attacks are launched on complex SoCs with rich OS implemented. Especially it introduces internal CPU-vs-MCU side-channel attacks which clearly meet real-life scenarios on state-of-the-art SoCs.<br><br>
+<div class="subtitle-grey">
+    <b>SideLine is not obvious</b></div> 
+    It does not use a sensor. It leverages a performance mechanism whose security implication was not even questioned until now. It is the starting point of a novel area of research distracting hardware IPs from their primary use to collect information. <br><br>
+<div class="subtitle-grey">
+    <b>SideLine is everywhere</b></div>
+    Every processor that uses external memory is potentially vulnerable. While our contribution focused on ARM devices, x86 and RISC-V exploits seem likely to arise in the near future.<br><br>
+<div class="subtitle-grey">
+    <b>SideLine is not a magic bullet</b></div>
+    It doesn't pretend thwarting existing counter-measures against SCA. Rather it aims at warning the community that even remote systems, that by nature were not supposed to be the target of SCA, are now at risk.<br><br><br>
+
+ <div class="subtitle-white">
+ <b>About Attack Privileges</b><br><br>
+ </div>
+ 
+ <div class="subtitle-grey">
+ <b>The attacker is root:</b>
+ </div>
+<i>He can use mmapping to access the delay line registers.</i><br/><br/>
+<li>He may target an encryption trustlet running within a Trusted Execution Environment.</li><br/>
+<li>He may target a crypto module or a security dedicated MCU e.g AP-to-MCU scenario in the paper. </li><br/><br/>
+ <div class="subtitle-grey">
+ <b>The attacker isn't root:</b> </div>
+<i>No access to mmapping</i><br/><br/>
+
+<li>He may take advantage of an existing kernel device that enables user-space processes to access the memory controller registers (e.g through DRAM test program disassembling) and then conduct the above attacks.</li><br/><br/>
+  
+  <div class="subtitle-white">
+ <b>Other Questions</b><br/>
+ </div><br>
+  
+  <div class="subtitle-grey">
+<b>About Setup Complexity:</b></div>
+All we need is a laptop (acquisition and CPA), a micro-USB cable and the development board. (an AC adapter was used for the second target).<br/><br/>
+
+ <div class="subtitle-grey">
+<b>Was the temperature controlled?</b>
+</div>
+No, during the Covid19 period, we had to conduct the experiments outside the lab with no access to any thermal chamber. However, the temperature noise was taken into account to improve the attack results. We attenuated its effect by applying post-treatment high-pass filtering on the collected SCA traces.<br/><br/>
+
+ <div class="subtitle-grey">
+<b>How did you run OpenSSL in a bare metal setting?</b>
+</div>
+The workaround we found was to only download AES related sources. We then used the AES_ecb_encrypt function to conduct the experiments.<br/><br/>
+
+ <div class="subtitle-grey">
+<b>How can one actually read out the command register?</b>
+</div>
+By simply reading at the register physical address: DLL_value = *(volatile u32 *) DLL_Addr<br/><br/>
+
+ <div class="subtitle-grey">
+<b>Do you assume nothing else is running on the system?</b>
+</div>
+No, there is the whole Linux rich OS running in background with kernel processes, interrupts, etc.<br/><br/>
+
+ <div class="subtitle-grey">
+<b>Can you generate a baseline while some other, unknown code is running?</b></div>
+Yes, we are working on multi-core processors that handle simultaneous thread execution.<br/><br/>
+
+ <div class="subtitle-grey">
+<b>How do you know when an encryption is being performed?</b></div>
+In local SCA, the attacker needs to trigger an encryption. We believe that the exact same is possible in an internal SCA scenario. Hence, the application processor (attacker) may trigger hardware acceleration (victim) by asking for a signature, an encryption, etc.<br/><br/>
+ <div class="subtitle-grey">
+<b>About DLL update frequency:</b></div>
+By definition, the DLL update has to be fast to ensure proper DRAM operation. That's why we obtain decent sampling frequency (16MHz) compared to what we could have done with low cost ADCs (&lt;1MHz).<br/><br/>
+ <div class="subtitle-grey">
+<b>About DLL data type:</b> </div>
+The datatype is defined as delay value. The command range is (0:64) for coarse-delay and (0:3) for fine-delay. The delay value can be represented as the phase shift applied to the signal. Unfortunately, SoC providers do not give precise information to convert the delay value into phase shift.<br><br><br><br>
+
   </div>
-<hr>
+  
+  </div>
+  
+    <hr>
 
 	<div class="text_bottom">
 		&copy; Joseph Gravellier 2020, All Rights Reserved
 	</div>
+  
+  
+  
 <ul class="menu">
 	<li style="display: inline-block;"><a href="https://josephgravellier.github.io/sideline/" class="links_menu col-menu" width=10%><b>SideLine</b></a></li>	&nbsp;	&nbsp;	&nbsp;	&nbsp;
 	<li style="display: inline-block;"><a href="/qa/" class="links_menu col-menu">Q &amp; A</a></li>	&nbsp;	&nbsp;	&nbsp;	&nbsp;
 	<li style="display: inline-block;"><a href="/reproduce/" class="links_menu col-menu">Reproduce</a></li>
 </ul>
+  
+  
+
+
+
 
 </body>
 </html>
